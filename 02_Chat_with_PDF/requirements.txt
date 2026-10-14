@@ -1,0 +1,11 @@
+langgraph
+langchain
+langchain-community
+langchain-text-splitters
+langchain-ollama
+PyPDF2==3.0.1
+python-dotenv==1.0
+streamlit==1.29
+faiss-cpu
+altair==4
+tiktoken==0.7.0
