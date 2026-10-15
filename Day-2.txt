@@ -12,3 +12,60 @@ Step 2: verify below softwares:
             $ ollama list
 
 
+Scaling: compute [cpu-8, io-100mbs, ram-16gb, n/w=100mbps] -> run ->. benchmarking -> 100 users concurent 
+    1. vertical -> [cpu-16, io-1000mbs, ram-128gb, n/w=1000mbps] -> 200000
+    2. horizontal [Kubernetes] Auto scaling -> Distributed Computing systems
+    load balancers -> 
+        -> [cpu-16, io-1000mbs, ram-128gb, n/w=1000mbps]
+        -> [cpu-16, io-1000mbs, ram-128gb, n/w=1000mbps]
+        -> [cpu-16, io-1000mbs, ram-128gb, n/w=1000mbps]
+        -> [cpu-16, io-1000mbs, ram-128gb, n/w=1000mbps]
+
+LLM or ML Ops 
+    1. Lambda's -> functional programing 
+        Java 8 .Net -> oop's -> functional programing
+            In Parallel -> Function(parameters) -> returns [never refer to extern data ]
+                8 cpu -> takes input -> process -> result 
+
+
+1. training -> gpu -> model
+    transformer [algo] -> data set[different ] -> LLM -> stateless service -> train LLM -> training is not recormeneded
+        LLM -> generic large dataset 
+        SLM -> specific dataset [BUC] -> light weight -> training can be done very often 
+2. executed -> model -> gpu
+    Inference -> model
+
+Limitation of LLM/SLM: over come inference
+    1. real time data 
+    2. context size is limited 272k, 1m tokens 
+    3. state less 
+    4. only do NLP processinng and generate data -> no actions can be done by the llm.
+    5. proprietary data with compliance 
+        1. development -> source 
+        2. logs monitoring 
+        3. project document -> confluance
+        4. customer db
+
+Inference -> Client App -> AI Enng -> Langchain or langgraph framework 
+    1. Context maangement 
+    2. real time data -> tools, mcp 
+    3. prompt engg -> over coming halucination
+    4. Manage Communication b/w c/s -> statefull -> rest api call to the llm with data [configuration -> cache]
+    5. pick rite model for rite task 
+        1. LM - text in put/ text output -> less
+        2. MM - image input / image output -> expensive 
+            Claude -> Opus
+                LLM -> Input -> cached [5 mins, 1 hr] ->  output 
+                pdf -> 
+    6. Action -> call rest api to post the job post 
+        Tools Local tools 
+
+        generate data by writing 10 lines of poem and create pdf 
+            1. AI solutoin 
+                1. client       -> llm ->  10lines + creating a pdf -> out as pdf file [raw pdf content]
+                2. client 
+                    1. generate 10 line of poem -> 10kb conetent
+                    2. getnerate a python code to create pdf -> 10kb -> evalaute model
+                    3. execute this pyton code in client and create pdf  
+
+
