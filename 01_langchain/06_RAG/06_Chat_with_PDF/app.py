@@ -1,11 +1,12 @@
 import os
 import tempfile
+import uuid
 from dataclasses import dataclass
 
 from langchain.agents import AgentState, create_agent
 from langchain.agents.middleware import ModelRequest, before_model, dynamic_prompt
+from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_core.messages import RemoveMessage
 from langchain_ollama import ChatOllama, OllamaEmbeddings
@@ -40,7 +41,7 @@ Document excerpts:
 # Runtime context carries this session's vector store into the middleware
 @dataclass
 class RuntimeContext:
-    vectorstore: FAISS
+    vectorstore: Chroma
 
 
 # Step 1 - Load: one Document per PDF page, with the file name and page number as metadata
@@ -70,10 +71,16 @@ def split_documents(docs: list[Document]) -> list[Document]:
     return chunks
 
 
-# Step 3 - Embed and store: chunks go into a FAISS vector store
-def build_vectorstore(chunks: list[Document]) -> FAISS:
+# Step 3 - Embed and store: chunks go into a Chroma vector store (in memory, no persist_directory)
+def build_vectorstore(chunks: list[Document]) -> Chroma:
     embeddings = OllamaEmbeddings(model="embeddinggemma:latest", base_url=OLLAMA_BASE_URL)
-    return FAISS.from_documents(documents=chunks, embedding=embeddings)
+    # In-memory Chroma clients in one process share their collections by name, so give every
+    # upload its own collection. Otherwise sessions (or a re-upload) would mix their PDFs.
+    return Chroma.from_documents(
+        documents=chunks,
+        embedding=embeddings,
+        collection_name=f"pdf-{uuid.uuid4().hex}",
+    )
 
 
 def format_excerpts(docs: list[Document]) -> str:
@@ -125,7 +132,7 @@ def get_conversation_agent():
 
 
 # Ask the agent a question; the thread_id keeps each browser session's conversation separate
-def ask_question(agent, vectorstore: FAISS, question: str, thread_id: str) -> str:
+def ask_question(agent, vectorstore: Chroma, question: str, thread_id: str) -> str:
     result = agent.invoke(
         {"messages": [{"role": "user", "content": question}]},
         config={"configurable": {"thread_id": thread_id}},

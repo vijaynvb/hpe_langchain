@@ -7,5 +7,5 @@ pypdf
 python-dotenv>=1.0
 streamlit>=1.62
 pillow
-faiss-cpu
+langchain-chroma
 tiktoken
