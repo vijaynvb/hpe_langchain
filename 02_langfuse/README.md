@@ -15,6 +15,10 @@ docker compose version
 py -3.11 --version
 ```
 
+> The account, project, and keys are created automatically on first start. To change them, copy [`.env.example`](.env.example) to `.env` in this folder before the first start.
+>
+> Update the `.env` file with your own secrets before exposing Langfuse to a network.
+
 Langfuse runs six containers and needs roughly 3-5 GB of RAM. If WSL2 uses too much memory, cap it in `%UserProfile%\.wslconfig` (then run `wsl --shutdown`). Do not go below about 8 GB.
 
 ```ini
@@ -50,8 +54,6 @@ Open http://localhost:3000 and sign in:
 | Public key | `pk-lf-local-dev-key` |
 | Secret key | `sk-lf-local-dev-secret` |
 | Base URL | `http://127.0.0.1:3000` |
-
-The account, project, and keys are created automatically on first start. To change them, copy [`.env.example`](.env.example) to `.env` in this folder before the first start.
 
 > The default secrets are placeholders, safe only because everything is bound to `127.0.0.1`. Replace them before exposing Langfuse to a network.
 
