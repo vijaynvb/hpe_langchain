@@ -12,6 +12,7 @@ from langchain_ollama import ChatOllama, OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph.message import REMOVE_ALL_MESSAGES
+from langgraph.runtime import Runtime
 
 # Ollama server URL - override with OLLAMA_BASE_URL env var
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
@@ -72,7 +73,7 @@ def build_vectorstore(docs: list[Document]) -> Chroma:
 
 # Step 4 - Memory: drop older turns before each model call so the prompt fits the context window
 @before_model
-def keep_recent_messages(state: AgentState) -> dict | None:
+def keep_recent_messages(state: AgentState, runtime: Runtime) -> dict | None:
     messages = state["messages"]
     if len(messages) <= MAX_MESSAGES:
         return None
