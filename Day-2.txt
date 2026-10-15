@@ -69,3 +69,8 @@ Inference -> Client App -> AI Enng -> Langchain or langgraph framework
                     3. execute this pyton code in client and create pdf  
 
 
+langchain - suite 
+    1. langchain - gen ai application 1.0
+    2. langgraph -> agentic ai impleementation [python, typescript]
+    3. langsmith [license] / langfuse [Open source] -> observability tool 
+    4. langflow -> no-code low-code 
