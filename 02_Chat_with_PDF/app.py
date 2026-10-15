@@ -11,7 +11,7 @@ from langgraph.runtime import get_runtime
 from dataclasses import dataclass
 
 # Ollama server URL - override with OLLAMA_BASE_URL env var
-OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "https://ungambolling-dwain-unsprouted.ngrok-free.dev")
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 
 SYSTEM_PROMPT = """You are a helpful assistant that answers questions about the \
 user's uploaded documents.
@@ -70,7 +70,7 @@ def search_documents(query: str) -> str:
 # Backend: create a LangChain v1 agent with retrieval tool and conversation memory
 def get_conversation_agent():
     llm = ChatOllama(
-        model="deepseek-r1:1.5b",
+        model="llama3.2:latest",
         temperature=0.5,
         base_url=OLLAMA_BASE_URL,
     )
