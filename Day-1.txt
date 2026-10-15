@@ -1,0 +1,128 @@
+
+-> SSE -> team  -> 4 year experen
+HR Recruitment process:
+
+1. JD 
+2. Publish -> Internal/external
+3. interested candiates -> 
+4. shortlist for interviews 
+5. pick right candidate for interview it self
+6. schedule the interview 
+7. conduct the interview 
+8. finalize the candiate 
+9. roll out the offer 
+10. on board on to the team
+
+
+1. Recruti a SSE -> team [product]  -> 4 year experen -> only for internal candidates
+2. offer letter -> onbarded 
+
+1. models LLM -> JD -> Rite inputs 
+2. Integration -> action taker [api, db]
+3. Model LLM -> scoring mechanisum -> interview panel 
+4. real time data and use [email, whatsapp, slack]
+5. zoom team, f2f 
+6. KB[RAG] -> MCP Tools -> data audit [validation]
+
+Agentic AI Solution [Langgraph] -> container [Docker, ...] -> Infra [Local, K8s, Cloud [AWS ecs, ec2]]
+    packages -> Langgraph_aws, Langgraph_azure, langraph_ollam, langgrah_openai
+
+HPE PCAI -> Docker containre -> K8s infra
+
+
+AI/ML -> 
+    1. AI -> Process which can think like a human brain
+    2. ML -> 
+        1. Experience -> UnSupervised learning -> not labeled
+        2. Academics -> Supervised learning -> labeled -> Feature engginer
+    3. 2017 -> Google -> Transformers -> Attention for the most releavnt data which is given for training 
+            1. Teacher thought the student with a book
+            2. LLM -> 
+
+
+AI Solution -> Client [Chatgpt, copilot, claude] / Server [LLM models, GPT-5.5, Opus 5.5, sonet, llama, ...] [Data Engg [slm] -> data set -> algo -> model]
+                                                   LLM [Training [8 months] -> Execution [after]] - Stateless services [SLA -> information is not retaint]
+                                                    Till when have you been trained 
+Client application [Langgraph]
+
+
+Chat tool: Client           ->      LLM 
+    hi my name is vijay
+    hi vijay wecome
+    what is 2+2             ->      LLM 
+    4
+    what is my name [Context engginering]        -> request [Limit of context, 272k, 1m token] ->     LLM []
+    its vijay                                               [Limit -> halucination]
+
+resume -> 1 page -> 500 tokens
+resume - 1000 pages -> 500k tokens
+
+
+Model -> 
+    Geolocation
+    banking
+    healthcare 
+
+Prompt engg [injecting the releavant context for bu]
+
+    System instruction: you are a banking domain agent respond only with banking context
+    Where is the bank? 
+        citi bank is in next lane 
+
+
+ist 9 am - 5 pm
+    11.00 - 11.30 am
+    2.00 - 2.30 pm
+
+
+NLP -> Natural language processing -> Process -> AI solution [LLM]
+    CLI - GUI
+
+    rm filename.txt -> shell 
+
+    Delete a file filename.txt
+    move the file filename.txt to trash     -> AI Solution -> actions
+
+
+VPN -> HP -> Jump RDP -> Customers Hpe Instance Access RDP -> HPE Pcai Portal and use the platform
+
+
+K8s -> orcastrator: Image -> runs image in 2 
+    1. 2 gpu 
+
+
+
+client -> requ                          LLM
+
+             endpoints [Api Gateway]    Model 
+              istio [service mesh]
+
+
+Provisoning The Infra       ->          use the infra
+1. kubeflow [LLM]           ->          AI Solution Implementation [Langgraph]
+
+
+Data Engg -> Data -> [Model training, ETL, Dashboards, RAG]
+
+Context engg -> prompt expansion -> LLM processing 
+
+
+
+AI Solutions: 
+    1. Gen AI Applications 
+        Client and server embeded for service the user [Chat based, content generation tools]
+    2. Agents 
+        Tasks -> publish a job posting in any platform 
+    3. Agentic AI Applications
+        Goal -> hire and onboard the resource 
+            1. n agents 
+
+
+Technology: 
+    1. Open source -> 
+        langchain, langgraph, MAgentFramework
+    2. propietory -> claude agent framework -> claude cod, cowork
+    3. no code - low code -> aws agents, n8n ...
+    4. code 
+
+Framewrok: Follow the rules 
