@@ -34,7 +34,8 @@
       "Bash(powershell.exe -NoProfile -Command 'Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match '\\\\''schema_fix_test'\\\\'' } | Select-Object -ExpandProperty ProcessId')",
       "PowerShell(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'schema_fix_test\\\\.py' -and $_.CommandLine -notmatch 'Get-CimInstance' } | Select-Object ProcessId, ParentProcessId, Name, CreationDate, @{n='Cmd';e={$c=$_.CommandLine; $c.Substring\\([Math]::Max\\(0,$c.Length-120\\)\\)}} | Format-Table -AutoSize -Wrap)",
       "PowerShell($p = Get-Process -Id 6012 -ErrorAction SilentlyContinue; if \\($p\\) { \"running for {0:N0} seconds, CPU {1:N0}s\" -f \\(\\(Get-Date\\) - $p.StartTime\\).TotalSeconds, $p.CPU } else { 'finished' }; Get-Date -Format 'HH:mm:ss')",
-      "PowerShell($p = Get-Process -Id 6012 -ErrorAction SilentlyContinue; if \\($p\\) { \"still running: {0:N0} seconds\" -f \\(\\(Get-Date\\) - $p.StartTime\\).TotalSeconds } else { 'finished' }; Get-Content \"C:\\\\Users\\\\vijay\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--01-LMS-Course-Content-AgneticAI-hpe-langchain\\\\99a4b168-089b-4fdd-9343-6733667fc962\\\\tasks\\\\bjefjpja4.output\" -Encoding utf8)"
+      "PowerShell($p = Get-Process -Id 6012 -ErrorAction SilentlyContinue; if \\($p\\) { \"still running: {0:N0} seconds\" -f \\(\\(Get-Date\\) - $p.StartTime\\).TotalSeconds } else { 'finished' }; Get-Content \"C:\\\\Users\\\\vijay\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--01-LMS-Course-Content-AgneticAI-hpe-langchain\\\\99a4b168-089b-4fdd-9343-6733667fc962\\\\tasks\\\\bjefjpja4.output\" -Encoding utf8)",
+      "Bash(PYTHONIOENCODING=utf-8 \"C:/Users/vijay/AppData/Local/Programs/Python/Python314/python.exe\" -u \"C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/schema_fix_test.py\" 3 0.7 notes)"
     ]
   }
 }
