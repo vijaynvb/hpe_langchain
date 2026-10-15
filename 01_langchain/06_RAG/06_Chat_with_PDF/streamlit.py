@@ -4,19 +4,7 @@ import uuid
 import streamlit as st
 from dotenv import load_dotenv
 from htmlTemplates import css, bot_template, user_template
-from app import (
-    load_pdfs,
-    split_documents,
-    build_vectorstore,
-    get_conversation_agent,
-    ask_question,
-)
-
-@st.cache_resource
-def build_agent():
-    # The agent and its checkpointer are shared across sessions;
-    # conversation state is isolated per thread_id instead.
-    return get_conversation_agent()
+from app import load_pdfs, build_vectorstore, build_agent, ask_question
 
 # UI: render one conversation turn
 def render_message(role: str, content: str):
@@ -32,7 +20,7 @@ def main():
 
     st.session_state.setdefault("chat_history", [])
     st.session_state.setdefault("thread_id", str(uuid.uuid4()))
-    st.session_state.setdefault("vectorstore", None)
+    st.session_state.setdefault("agent", None)
 
     st.header("Chat with multiple PDFs :books:")
 
@@ -45,15 +33,15 @@ def main():
             with st.spinner("Processing"):
                 try:
                     pages = load_pdfs(pdf_docs)
-                    chunks = split_documents(pages)
-                    st.session_state.vectorstore = build_vectorstore(chunks)
+                    vectorstore = build_vectorstore(pages)
+                    st.session_state.agent = build_agent(vectorstore)
                 except ValueError as err:
                     st.error(str(err))
                 else:
                     st.session_state.chat_history = []
                     st.session_state.thread_id = str(uuid.uuid4())
                     st.success(
-                        f"Processed {len(pages)} pages into {len(chunks)} chunks. "
+                        f"Processed {len(pages)} pages into {len(vectorstore.get()['ids'])} chunks. "
                         "You can start asking questions."
                     )
 
@@ -64,14 +52,13 @@ def main():
     # st.chat_input stays pinned to the bottom of the page and returns each question only once
     user_question = st.chat_input("Ask a question about your documents")
     if user_question:
-        if st.session_state.vectorstore is None:
+        if st.session_state.agent is None:
             st.warning("Upload your PDFs and click 'Process' first.")
         else:
             render_message("user", user_question)
             with st.spinner("Thinking"):
                 answer = ask_question(
-                    build_agent(),
-                    st.session_state.vectorstore,
+                    st.session_state.agent,
                     user_question,
                     st.session_state.thread_id,
                 )
