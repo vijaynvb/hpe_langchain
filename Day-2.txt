@@ -1,0 +1,14 @@
+
+Step 1: Clone the repo
+Step 2: verify below softwares: 
+    1. python 
+        $ python --version
+    2. jupyter extension in vs code 
+    3. ollama runtime enggine
+        $ ollama --version
+        1. download the models from repository [llama3.2:latest]
+            $ ollama pull llama3.2:latest
+            $ ollama run llamal3.2:latest
+            $ ollama list
+
+
