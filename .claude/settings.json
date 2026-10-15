@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '20,80p' \"C:/Users/vijay/AppData/Local/npm-cache/_logs/2026-10-15T06_46_58_163Z-debug-0.log\")",
+      "Read(//c/Users/vijay/AppData/Local/npm-cache/_logs/**)",
+      "Bash(mkdir -p C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/pkg_mcp_time C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/pkg_mcp_time_win)",
+      "Bash(npm pack *)",
+      "Bash(tar --force-local -xzf C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/pkg_mcp_time/theo.foobar-mcp-time-0.4.0.tgz -C C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/pkg_mcp_time)",
+      "Bash(tar --force-local -xzf C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/pkg_mcp_time_win/mcp-time-windows-x64-0.4.0.tgz -C C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/pkg_mcp_time_win)",
+      "Bash(node -e \"console.log\\(process.platform + '-' + process.arch\\)\")",
+      "Bash(uv --version)",
+      "Bash(\"D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe\" -m pip index versions mcp-server-time)",
+      "Bash(curl -s -m 5 http://localhost:11434/api/tags)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/kernel_test.py)",
+      "Bash(\"D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe\" -m pip install --dry-run mcp-server-time)",
+      "Bash(C:/Users/vijay/AppData/Local/Programs/Python/Python314/python.exe -m venv C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/tmpvenv)",
+      "Bash(C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/tmpvenv/Scripts/python.exe -m pip install -q mcp-server-time)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/kernel_test2.py)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/kernel_test3.py)",
+      "Bash(ls -la \"C:/Users/vijay/.claude/projects/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/memory/\" 2>&1; cat \"C:/Users/vijay/.claude/projects/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/memory/MEMORY.md\" 2>&1 | head -40)",
+      "Read(//c/Users/vijay/.claude/projects/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/memory/**)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe -c ' *)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/kernel_test4.py)",
+      "Bash(PYTHONIOENCODING=utf-8 D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe -c ' *)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/kernel_test5.py)",
+      "Bash(break)",
+      "Bash(export PYTHONIOENCODING=utf-8)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/nb_runner.py D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/01_langchain/L6_memory.ipynb 11,12,16,17 3)",
+      "Bash(D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/.venv/Scripts/python.exe C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/nb_runner.py D:/01_LMS_Course_Content/AgneticAI/hpe_langchain/01_langchain/L9_HITL.ipynb 10,11 3)",
+      "PowerShell(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'scratchpad|ipykernel_launcher' -and $_.Name -match 'python|bash|sh' } | Select-Object ProcessId, ParentProcessId, Name, @{n='Cmd';e={$_.CommandLine.Substring\\(0,[Math]::Min\\(170,$_.CommandLine.Length\\)\\)}} | Format-Table -AutoSize -Wrap)",
+      "PowerShell(Stop-Process -Id 9476,34380,28788,1100,24832,32440,2756 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2; $left = Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'schema_test|scratchpad/' }; if \\($left\\) { $left | Select-Object ProcessId, Name } else { 'none of my test processes left' }; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'ipykernel_launcher' } | Select-Object ProcessId, @{n='python';e={\\($_.CommandLine -split ' '\\)[0]}})",
+      "Bash(curl -s -m 5 http://localhost:11434/api/ps)",
+      "Bash(PYTHONIOENCODING=utf-8 \"C:/Users/vijay/AppData/Local/Programs/Python/Python314/python.exe\" \"C:/Users/vijay/AppData/Local/Temp/claude/d--01-LMS-Course-Content-AgneticAI-hpe-langchain/99a4b168-089b-4fdd-9343-6733667fc962/scratchpad/schema_fix_test.py\" 3 0.7)",
+      "Bash(powershell.exe -NoProfile -Command 'Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match '\\\\''schema_fix_test'\\\\'' } | Select-Object -ExpandProperty ProcessId')",
+      "PowerShell(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'schema_fix_test\\\\.py' -and $_.CommandLine -notmatch 'Get-CimInstance' } | Select-Object ProcessId, ParentProcessId, Name, CreationDate, @{n='Cmd';e={$c=$_.CommandLine; $c.Substring\\([Math]::Max\\(0,$c.Length-120\\)\\)}} | Format-Table -AutoSize -Wrap)",
+      "PowerShell($p = Get-Process -Id 6012 -ErrorAction SilentlyContinue; if \\($p\\) { \"running for {0:N0} seconds, CPU {1:N0}s\" -f \\(\\(Get-Date\\) - $p.StartTime\\).TotalSeconds, $p.CPU } else { 'finished' }; Get-Date -Format 'HH:mm:ss')",
+      "PowerShell($p = Get-Process -Id 6012 -ErrorAction SilentlyContinue; if \\($p\\) { \"still running: {0:N0} seconds\" -f \\(\\(Get-Date\\) - $p.StartTime\\).TotalSeconds } else { 'finished' }; Get-Content \"C:\\\\Users\\\\vijay\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--01-LMS-Course-Content-AgneticAI-hpe-langchain\\\\99a4b168-089b-4fdd-9343-6733667fc962\\\\tasks\\\\bjefjpja4.output\" -Encoding utf8)"
+    ]
+  }
+}
