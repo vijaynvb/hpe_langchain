@@ -38,13 +38,14 @@ To install the MultiPDF Chat App, please follow these steps:
 pip install -r requirements.txt
 ```
 
-**3.** Obtain an AWS Access Key ID and Secret Access Key, and set them as environment variables in the .env file:
+**3.** Install [Ollama](https://ollama.com) and pull the chat model and the embedding model the app uses:
 
 ```commandline
-AWS_ACCESS_KEY_ID=your_access_key_id
-AWS_SECRET_ACCESS_KEY=your_secret_access_key
-AWS_DEFAULT_REGION=your_default_region
+ollama pull llama3.2
+ollama pull embeddinggemma
 ```
+
+The app connects to Ollama at `http://localhost:11434`. To use another server, set `OLLAMA_BASE_URL` in the .env file.
 
 ---
 
@@ -52,13 +53,15 @@ AWS_DEFAULT_REGION=your_default_region
 
 To use the MultiPDF Chat App, follow these steps:
 
-**1.** Ensure that you have installed the required dependencies and added the AWS credentials to the `.env` file.
+**1.** Ensure that you have installed the required dependencies and that Ollama is running with both models pulled.
 
-**2.** Run the `main.py` file using the Streamlit CLI. Execute the following command:
+**2.** From this folder, run the `streamlit.py` file using the Streamlit CLI:
 
 ```commandline
-streamlit run main.py
+streamlit run streamlit.py
 ```
+
+Use the `streamlit` command rather than `python -m streamlit`. Because this folder contains a file named `streamlit.py`, `python -m streamlit` would load that file instead of the Streamlit package.
 
 **3.** The application will launch in your default web browser, displaying the user interface.
 

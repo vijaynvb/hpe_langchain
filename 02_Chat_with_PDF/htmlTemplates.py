@@ -1,3 +1,21 @@
+import base64
+from io import BytesIO
+from pathlib import Path
+
+from PIL import Image
+
+IMAGES_DIR = Path(__file__).parent / "images"
+
+
+def avatar_data_uri(file_name: str, size: int = 156) -> str:
+    """Shrink a local image and inline it, so the avatars don't depend on an image host."""
+    image = Image.open(IMAGES_DIR / file_name)
+    image.thumbnail((size, size))
+    buffer = BytesIO()
+    image.save(buffer, format="PNG")
+    return "data:image/png;base64," + base64.b64encode(buffer.getvalue()).decode()
+
+
 css = '''
 <style>
 .chat-message {
@@ -28,17 +46,17 @@ css = '''
 bot_template = '''
 <div class="chat-message bot">
     <div class="avatar">
-        <img src="https://i.ibb.co/cN0nmSj/Screenshot-2023-05-28-at-02-37-21.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+        <img src="{{AVATAR}}">
     </div>
     <div class="message">{{MSG}}</div>
 </div>
-'''
+'''.replace("{{AVATAR}}", avatar_data_uri("agent.png"))
 
 user_template = '''
 <div class="chat-message user">
     <div class="avatar">
-        <img src="https://i.ibb.co/rdZC7LZ/Photo-logo-1.png">
-    </div>    
+        <img src="{{AVATAR}}">
+    </div>
     <div class="message">{{MSG}}</div>
 </div>
-'''
+'''.replace("{{AVATAR}}", avatar_data_uri("user.png"))

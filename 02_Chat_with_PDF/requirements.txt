@@ -3,9 +3,9 @@ langchain
 langchain-community
 langchain-text-splitters
 langchain-ollama
-PyPDF2==3.0.1
-python-dotenv==1.0
-streamlit==1.29
+pypdf
+python-dotenv>=1.0
+streamlit>=1.62
+pillow
 faiss-cpu
-altair==4
-tiktoken==0.7.0
+tiktoken
