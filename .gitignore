@@ -1,6 +1,6 @@
 *.env
 *.venv
-*docs
+
 *__pycache__/
 *.agents
 *.claude
