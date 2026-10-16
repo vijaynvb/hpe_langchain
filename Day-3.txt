@@ -1,0 +1,14 @@
+
+-> data from any data source 
+-> chunk [meaning of the data as per use case]
+-> embeding using embeding models -> vector data 
+-> vectordb 
+-> query on vector db -> [similar records]
+-> do context engg
+-> llm for output generation
+
+tools -> context -> relatime data 
+
+
+
+id uniques -> summary, comments, howtofix 
