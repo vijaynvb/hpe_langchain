@@ -35,7 +35,7 @@ about the conversation itself.
 Document excerpts:
 {context}
 """
-
+# context chunk sfrom the vector db queeried with similarity -3 chunks
 
 # Step 1 - Load: one Document per PDF page, with the file name and page number as metadata
 def load_pdfs(pdf_files) -> list[Document]:
@@ -98,7 +98,9 @@ def build_agent(vectorstore: Chroma):
             f"[{doc.metadata['source']}, page {doc.metadata['page_label']}]\n{doc.page_content}"
             for doc in unique_docs
         )
-        return SYSTEM_PROMPT_TEMPLATE.format(context=excerpts)
+        prompt = SYSTEM_PROMPT_TEMPLATE.format(context=excerpts)
+        print(prompt)
+        return prompt
 
     return create_agent(
         model=ChatOllama(model="llama3.2:latest", temperature=0.5, base_url=OLLAMA_BASE_URL),
@@ -110,8 +112,21 @@ def build_agent(vectorstore: Chroma):
 
 # Ask the agent a question; the thread_id keeps each conversation separate
 def ask_question(agent, question: str, thread_id: str) -> str:
+    # Print the configuration data passing into the middleware/agent
+    print("\n--- Middleware Input Config ---")
+    print(f"Thread ID: {thread_id}")
+    print(f"User Question: {question}")
+    
     result = agent.invoke(
         {"messages": [{"role": "user", "content": question}]},
         config={"configurable": {"thread_id": thread_id}},
     )
+    
+    # Print the raw result dictionary to see all metadata and history
+    print("\n--- Middleware Output Data ---")
+    print(f"Full Result Keys: {list(result.keys())}")
+    print(f"Total Messages in History: {len(result.get('messages', []))}")
+    print(f"Last Agent Response: {result['messages'][-1].content}\n")
+    
     return result["messages"][-1].content
+

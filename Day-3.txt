@@ -12,3 +12,32 @@ tools -> context -> relatime data
 
 
 id uniques -> summary, comments, howtofix 
+
+
+
+data set is json 
+{
+    name: possible fixes 
+    tags: network, internet
+    fix steps:     
+    .... 
+}
+{
+    name: possible fixes 
+    tags: network, internet
+    fix steps:     
+    .... 
+}
+{
+    name: possible fixes 
+    tags: printer issue 
+    fix steps:     
+    .... 
+}
+
+1 chunk
+
+SI: 
+    given input is json whith these fields 
+    refer the profile to get employees more details 
+
