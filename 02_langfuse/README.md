@@ -2,6 +2,7 @@
 
 Run a self-hosted Langfuse server locally with Docker and connect your Python code to it.
 
+The account, project, and keys are created automatically on first start. To change them, copy [`.env.example`](.env.example) to `.env` in this folder before the first start.
 ---
 
 # Prerequisites
@@ -51,7 +52,7 @@ Open http://localhost:3000 and sign in:
 | Secret key | `sk-lf-local-dev-secret` |
 | Base URL | `http://127.0.0.1:3000` |
 
-The account, project, and keys are created automatically on first start. To change them, copy [`.env.example`](.env.example) to `.env` in this folder before the first start.
+
 
 > The default secrets are placeholders, safe only because everything is bound to `127.0.0.1`. Replace them before exposing Langfuse to a network.
 

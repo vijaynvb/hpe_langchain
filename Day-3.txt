@@ -39,5 +39,55 @@ data set is json
 
 SI: 
     given input is json whith these fields 
-    refer the profile to get employees more details 
+    refer the profile to get employees more detail
 
+
+
+
+
+    Web Application:
+        n no users can access the app -> 
+            1.vijay -> agent -> memory -> thread_id = calc-1
+                what is 2+2
+                4
+                what is myltiplied by 5
+                5*4 = 20
+            2. jai  -> agent -> memory -> thread_id = calc-2
+                what is 2+3
+                5
+                what is myltiplied by 6
+                5*6 = 30
+
+
+            
+
+
+ Browser     ->          [Client / webserver chat gpt statefull]          -> api gateways [kong, istio] [role based access, validation, ratelimiting] ->             llm server stateless cache[5m, 1hr]
+
+
+Agentic AI: Observability framework -> OTel -> langsmith  -> langfuse
+    1. call the agents
+        1. connect to rag 
+        2. tool connection 
+    2. call the tools 
+
+
+
+Langfuse -> 
+    postgress storing the logs 
+    minio -> file 
+
+
+
+interupt(human approval) [call back function[graph, thread, option-approve, deny]], command ["next", end], runtime 
+
+Agentic AI -> NLP
+    node -> langchain agent 
+    sub graph -> workflow
+    sub graph -> workflows
+    
+Events -> rabitmq, kafka -> sub publisher 
+
+Python code -> subscribe for a event -> email recievid
+    trigger the agent -> event basis 
+    batch processing -> pooling 
